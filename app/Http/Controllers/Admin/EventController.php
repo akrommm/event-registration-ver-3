@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Event;
 use App\Models\Admin\Registration;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Admin\Ulasan;
-use App\Models\Admin\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -70,6 +69,7 @@ class EventController extends Controller
 
         $event = new Event();
         $event->nama = request('nama');
+        $event->slug = Str::slug($request->nama, '-');
         $event->waktu = request('waktu');
         $event->tempat = request('tempat');
         $event->status = request('status');
@@ -111,6 +111,7 @@ class EventController extends Controller
 
         $event = Event::find($id);
         if (request('nama')) $event->nama = request('nama');
+        $event->slug = Str::slug($request->nama, '-');
         if (request('waktu')) $event->waktu = request('waktu');
         if (request('tempat')) $event->tempat = request('tempat');
         if (request('status')) $event->status = request('status');

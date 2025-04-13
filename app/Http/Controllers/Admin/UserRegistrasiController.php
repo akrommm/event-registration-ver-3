@@ -20,8 +20,17 @@ class UserRegistrasiController extends Controller
 {
     function index()
     {
-        $list_event = Event::where('status', 1)->get();
+        $list_event = Event::where('status', 1)->paginate(6);
         return view('user.registrasi.index', compact('list_event'));
+    }
+
+    public function show($slug)
+    {
+        // Mencari artikel berdasarkan slug
+        $event = Event::where('slug', $slug)->firstOrFail();
+
+        // Mengembalikan view dengan artikel yang ditemukan
+        return view('user.registrasi.show', compact('event'));
     }
 
     public function store(Request $request)
@@ -100,7 +109,7 @@ class UserRegistrasiController extends Controller
         $pesanWA = "*📢 Pendaftaran Berhasil!*\n\n" .
             "*Nama:* {$registration->nama_peserta}\n" .
             "*ID Peserta:* {$registration->id_peserta}\n" .
-            "*Event:* " . Event::find($request->id_event)->nama_event . "\n\n" .
+            "*Event:* " . Event::find($request->id_event)->nama . "\n\n" .
             "Simpan pesan ini sebagai bukti pendaftaran.\n\n" .
             "Terima kasih 🙏";
 

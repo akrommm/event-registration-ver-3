@@ -19,7 +19,8 @@ class Event extends ModelAuthenticate
         'nama',
         'waktu',
         'status',
-        'gambar'
+        'gambar',
+        'slug'
     ];
 
     protected $casts = [
