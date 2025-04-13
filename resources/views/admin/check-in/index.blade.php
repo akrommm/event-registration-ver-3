@@ -27,7 +27,7 @@
             </div>
 
             <p class="text-center text-danger" style="font-size: 14px; margin-top: 10px;">
-                <small>*Pastikan peserta memiliki ID Card atau QR Code untuk proses check-in.</small>
+                <small>*Pastikan peserta memiliki ID Peserta atau QR Code untuk proses check-in.</small>
             </p>
         </div>
     </div>

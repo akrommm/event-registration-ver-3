@@ -1,6 +1,6 @@
 <x-app title="A-Labs | Profile ">
     <div class="card-header">
-        <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px"> Profil
+        <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px"> Profile
         </h5>
     </div>
     <br>
@@ -20,7 +20,6 @@
             <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
                 <div class="card-header">
                     <a href="{{ url('admin/profile', $user->id) }}/edit" class="btn btn-warning btn-interactive btn-sm float-right mt-3 mb-3">Edit</a>
-                   
                 </div>
                 <div class="card-body">
                     <div class="row">

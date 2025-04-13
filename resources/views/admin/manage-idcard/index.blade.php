@@ -1,5 +1,5 @@
 <x-app title="A-Labs | Kelola ID Card ">
-    <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Data ID Card Panitia</h5>
+    <h5 class="m-0 font-weight-bold text-dark" style="text-align:center; font-size: 25px">Kelola ID Card</h5>
     <hr>
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
         <div class="card-body">

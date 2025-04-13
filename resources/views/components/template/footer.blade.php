@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="footer-content">
-        <p class="m-b-0">A-Labs - Event Registration &copy; 2025
+        <p class="m-b-0">A-Labs | Event Registration &copy; 2025
             @if (date('Y') > '2025')
             - {{ date('Y') }}
             @endif All rights reserved.</p>
