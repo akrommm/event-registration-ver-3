@@ -21,45 +21,6 @@ class AuthController extends Controller
         return view('auth.regis');
     }
 
-    public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'nama' => 'required|regex:/^[A-Za-z\s]*$/',
-            'username' => 'required',
-            'email' => 'required|email|min:5|max:60',
-            'no_hp' => 'required',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required|same:password',
-        ], [
-            'nama.regex' => 'Nama lengkap tidak boleh menggunakan angka!',
-            'nama.required' => 'Nama Harus Diisi',
-            'username.required' => 'Username Harus Diisi',
-            'email.required' => 'Email Harus Diisi',
-            'email.email' => 'Harus Email Yang Valid',
-            'no_hp.required' => 'Nomor HP Harus Diisi',
-            'password.required' => 'Password Harus Diisi',
-            'password.min' => 'Password minimal 8 huruf',
-            'confirm_password.same' => 'Konfirmasi password tidak sama!'
-        ]);
-
-        if ($validator->fails()) {
-            return redirect(url()->previous())
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        $user = new ModelsUser();
-        $user->nama = request('nama');
-        $user->email = request('email');
-        $user->username = request('username');
-        $user->type = 'USER';
-        $user->no_hp = request('no_hp');
-        $user->password = request('password');
-        $user->save();
-
-        return redirect('login')->with('success', 'Daftar Berhasil');
-    }
-
     public function loginProcess()
     {
         $credential = [

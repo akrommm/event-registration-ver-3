@@ -3,7 +3,7 @@
     <hr>
     <div class="card shadow-lg" style="margin: auto; border-radius: 10px;">
         <div class="card-body">
-            <form action="{{ url('super-admin/registration') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('admin/registration') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama Peserta</label>
